@@ -2,8 +2,8 @@ package ui;
 
 import model.University;
 import model.Course;
-import model.Teacher;
 import model.Student;
+import model.Teacher;
 
 import java.util.Scanner;
 
@@ -19,12 +19,12 @@ public class Main {
         university.createPartTimeTeacher("Daniel", 5000000, 10);
         university.createPartTimeTeacher("Juan", 6000000, 15);
 
-        university.createStudent(1, "Santiago", 22);
-        university.createStudent(2, "Luis", 21);
-        university.createStudent(3, "Darwin", 21);
-        university.createStudent(4, "Kevin", 21);
-        university.createStudent(5, "Manuel", 21);
-        university.createStudent(6, "Brayan", 22);
+        university.createStudent("Santiago", 22);
+        university.createStudent("Luis", 21);
+        university.createStudent("Darwin", 21);
+        university.createStudent("Kevin", 21);
+        university.createStudent("Manuel", 21);
+        university.createStudent("Brayan", 22);
 
         university.createCourse("Apps Moviles", 404, university.searchTeacherByName("Andres"));
         university.createCourse("Microservicios", 302, university.searchTeacherByName("Ricardo"));
@@ -44,7 +44,7 @@ public class Main {
 
         boolean choice = true;
 
-        while(choice){
+        while (choice) {
 
             System.out.println("Bienvenido a la Universidad Icesi:");
             System.out.println("1. Ver todos los profesores");
@@ -56,7 +56,7 @@ public class Main {
             int menu = scanner.nextInt();
             scanner.nextLine();
 
-            switch (menu){
+            switch (menu) {
                 case 1:
                     int count = 0;
 
@@ -76,7 +76,7 @@ public class Main {
                         System.out.println(c.getName());
                     }
 
-                    while(choice2){
+                    while (choice2) {
                         System.out.println("Desea conocer mas informacion sobre alguna clase?");
                         System.out.println("(Ingrese el numero de la opcion deseada)");
                         System.out.println("1. Si");
@@ -84,7 +84,7 @@ public class Main {
                         int menu2 = scanner.nextInt();
                         scanner.nextLine();
 
-                        switch (menu2){
+                        switch (menu2) {
                             case 1:
                                 System.out.println("Ingrese el nombre de la clase deseada:");
                                 String courseName = scanner.nextLine();
@@ -102,18 +102,17 @@ public class Main {
                 case 3:
                     boolean choice3 = true;
 
-                    System.out.println("Ingrese el id del estudiante:");
-                    int id = scanner.nextInt();
-                    scanner.nextLine();
                     System.out.println("Ingrese el nombre del estudiante:");
                     String name = scanner.nextLine();
                     System.out.println("Ingrese la edad del estudiante:");
                     int age = scanner.nextInt();
                     scanner.nextLine();
 
-                    university.createStudent(id, name, age);
+                    university.createStudent(name, age);
 
-                    while(choice3){
+                    int id = Student.getAutoId() - 1;
+
+                    while (choice3) {
                         System.out.println("Como desea proceder?");
                         System.out.println("(Ingrese el numero de la opcion deseada)");
                         System.out.println("1. Añadir el estudiante a una clase");
@@ -121,7 +120,7 @@ public class Main {
                         int menu2 = scanner.nextInt();
                         scanner.nextLine();
 
-                        switch (menu2){
+                        switch (menu2) {
                             case 1:
                                 System.out.println("Ingrese el nombre de la clase deseada:");
                                 String courseName = scanner.nextLine();
@@ -153,7 +152,7 @@ public class Main {
                     int classroom = scanner.nextInt();
                     scanner.nextLine();
 
-                    while(choice4){
+                    while (choice4) {
                         System.out.println("Como desea proceder?");
                         System.out.println("(Ingrese el numero de la opcion deseada)");
                         System.out.println("1. Añadir un profesor a la clase");
@@ -161,7 +160,7 @@ public class Main {
                         int menu2 = scanner.nextInt();
                         scanner.nextLine();
 
-                        switch (menu2){
+                        switch (menu2) {
                             case 1:
                                 System.out.println("Ingrese el nombre del profesor deseado:");
                                 String teacherName = scanner.nextLine();
@@ -183,7 +182,7 @@ public class Main {
                         }
                     }
 
-                    while(choice5){
+                    while (choice5) {
                         System.out.println("Como desea proceder?");
                         System.out.println("(Ingrese el numero de la opcion deseada)");
                         System.out.println("1. Añadir estudiantes a la clase");
@@ -192,7 +191,7 @@ public class Main {
                         int menu2 = scanner.nextInt();
                         scanner.nextLine();
 
-                        switch (menu2){
+                        switch (menu2) {
                             case 1:
                                 System.out.println("Ingrese el id del estudiante deseado:");
                                 int studentId = scanner.nextInt();

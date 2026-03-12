@@ -76,8 +76,8 @@ public class University {
         return coursesResult;
     }
 
-    public void createStudent(int id, String name, int age){
-        Student student = new Student(id, name, age);
+    public void createStudent(String name, int age){
+        Student student = new Student(name, age);
         students.add(student);
     }
 
@@ -110,4 +110,5 @@ public class University {
             course.addStudent(student);
         }
     }
+
 }

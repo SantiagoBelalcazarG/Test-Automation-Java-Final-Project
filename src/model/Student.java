@@ -6,8 +6,11 @@ public class Student {
     private String name;
     private int age;
 
-    public Student(int id, String name, int age) {
-        this.id = id;
+    private static int autoId = 1;
+
+    public Student(String name, int age) {
+        this.id = autoId;
+        autoId++;
         this.name = name;
         this.age = age;
     }
@@ -34,6 +37,14 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public static int getAutoId() {
+        return autoId;
+    }
+
+    public static void setAutoId(int autoId) {
+        Student.autoId = autoId;
     }
 
     @Override
