@@ -1,3 +1,10 @@
+package ui;
+
+import model.University;
+import model.Course;
+import model.Teacher;
+import model.Student;
+
 import java.util.Scanner;
 
 public class Main {

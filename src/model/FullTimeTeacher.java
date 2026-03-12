@@ -1,3 +1,5 @@
+package model;
+
 public class FullTimeTeacher extends Teacher{
 
     private int experience;
