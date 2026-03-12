@@ -27,5 +27,5 @@ public class PartTimeTeacher extends Teacher{
                 "salario = $" + calculateSalary() + " " +
                 "horas semanales = " + activeHours;
     }
-    
+
 }
